@@ -1,0 +1,115 @@
+// Sinhala strings for DJ Mixer.
+//
+// NOTE (handed over to the user / dad to verify): these are best-effort drafts.
+// Please have a native Sinhala speaker review and correct them before shipping.
+// Strings use {n}, {size} etc. as placeholders — keep them untouched.
+
+import type { StringKey } from './en';
+
+export const si: Record<StringKey, string> = {
+  appName: 'DJ මික්සර්',
+  tagline: 'සංගීත වීඩියෝ කිහිපයක් එකට එකතු කර එක ම MP4 එකක් හදන්න. සියල්ල ඔබේ බ්‍රව්සරයේ — කිසිවක් අන්තර්ජාලයට යවන්නේ නැහැ.',
+  tabLibrary: 'පුස්තකාලය',
+  tabMixes: 'මගේ මික්ස්',
+
+  addVideos: 'වීඩියෝ එකතු කරන්න',
+  addVideosHint: 'මුලින්ම සිංහල සංගීත වීඩියෝ, කැරෝකී ෆයිල් හෝ ඕඩියෝ ෆයිල් ඔබේ පුස්තකාලයට එක් කරන්න.',
+  dragDropHint: '…නැත්නම් ෆයිල් මෙතැනට ඇද දමන්න',
+  fileTooBig: 'ෆයිල් එක ගොඩක් ලොකුයි (උපරිම {size}). කුඩා ෆයිල් එකක් තෝරන්න.',
+  importing: 'ආයාත වෙමින්…',
+  analyzing: 'විශ්ලේෂණය වෙමින්…',
+  analysisFailed: 'විශ්ලේෂණය අසාර්ථකයි',
+  noVideosYet: 'තාම වීඩියෝ නැහැ. පටන් ගන්න ෆයිල් එකතු කරන්න.',
+  deleteVideo: 'මකන්න',
+  deleteVideoConfirm: '“{title}” සහ එහි වීඩියෝ ෆයිල් එක මෙම බ්‍රව්සරයෙන් ඉවත් කරන්නද?',
+  untitled: 'නම නැති',
+
+  newMix: 'නව මික්ස්',
+  editMix: 'මික්ස් එක සංස්කරණය',
+  mixTitlePlaceholder: 'මික්ස් නම (උදා: මංගල රාත්‍රිය)',
+  noClipsYet: 'මෙම මික්ස් එක හිස්.',
+  noClipsHint: '“කොටසක් එකතු කරන්න” ඔබා පුස්තකාලයෙන් වීඩියෝ තෝරන්න. ඒවා මෙහි පෙනෙන පිළිවෙළට වාදනය වේ.',
+  addClip: 'කොටසක් එකතු කරන්න',
+  pickClipsTitle: 'එකතු කළ යුතු කොටස් තෝරන්න',
+  clipN: 'කොටස {n}',
+  removeClip: 'කොටස ඉවත් කරන්න',
+
+  transition: 'සංක්‍රමණය',
+  transitionSmooth: 'සුමට මිශ්‍රණය',
+  transitionCut: 'හදිසි කප්පාදුව',
+  transitionFadeBlack: 'කළුවට මැකීම',
+  transitionSlide: 'ස්ලයිඩය',
+  durShort: 'කෙටි',
+  durNormal: 'සාමාන්‍ය',
+  durLong: 'දිගු',
+
+  startHere: 'මෙතැනින් පටන් ගන්න',
+  endHere: 'මෙතැනින් අවසන් කරන්න',
+  playSelection: 'තෝරාගත් කොටස වාදනය',
+  playFromStart: 'මුල සිට වාදනය',
+  pause: 'විරාමය',
+  resume: 'දිගටම',
+  restart: 'නැවත පටන්',
+  stepBack: 'තත් 1ක් පස්සට',
+  stepForward: 'තත් 1ක් ඉස්සරහට',
+  dragHint: 'පිළිවෙළ මාරු කිරීමට කොටස් ඇද දමන්න',
+
+  preSaving: '…සුරැකිණි',
+  saveFailed: 'සුරැකීමට නොහැකි විය',
+
+  render: 'වීඩියෝව සුරකින්න',
+  renderTitle: 'මික්ස් එක පිටතට ගන්න',
+  quality: 'ගුණත්වය',
+  qualityFast: 'වේගවත් · 720p',
+  qualityFastHint: 'WhatsApp සඳහා හොඳම — කුඩා ෆයිල්, ඉක්මනින්',
+  qualityGood: 'හොඳ · 1080p',
+  qualityGoodHint: 'තියුණු, නමුත් රෙන්ඩරයට වැඩි වේලාවක්',
+  format: 'ආකෘතිය',
+  formatVideo: 'වීඩියෝ (MP4)',
+  formatAudioOnly: 'ඕඩියෝ පමණයි (MP3)',
+  renderButton: 'රෙන්ඩරය ආරම්භ කරන්න',
+  renderProgress: 'රෙන්ඩරය වෙමින්… {pct}%',
+  renderPhasePrepare: 'කොටස් සූදානම් වෙමින්…',
+  renderPhaseStitch: 'එකට එකතු වෙමින්…',
+  renderDone: 'ඉවරයි! ඔබේ මික්ස් එක සූදානම්.',
+  download: 'බාගන්න',
+  renderAgain: 'නැවත රෙන්ඩරය',
+  renderError: 'රෙන්ඩරය අසාර්ථකයි: {reason}',
+  renderErrorOom: 'මතකය පිරී ගියා. කෙටි මික්ස් එකක් හෝ අඩු ගුණත්වයක් උත්සාහ කරන්න.',
+  renderErrorBig: 'මික්ස් එක බ්‍රව්සරයට වැඩියි. කෙටි මික්ස් කිහිපයකට වෙන් කරන්න.',
+  renderErrorUnsupported: 'මෙම ෆයිල් එකේ කෝඩෙක් එක බ්‍රව්සරයේ FFmpeg එකේ සහය නැහැ. වෙනත් මූලාශ්‍ර ෆයිල් එකක් උත්සාහ කරන්න.',
+  closeModal: 'වසන්න',
+
+  myMixOutputs: 'රෙන්ඩර් කළ මික්ස්',
+  reDownload: 'බාගන්න',
+  deleteMixConfirm: '“{title}” මික්ස් එක මකන්නද? රෙන්ඩර් කළ වීඩියෝ සුරැකේ.',
+  openMix: 'විවෘත කරන්න',
+  continueEditing: 'සංස්කරණය දිගටම',
+  deleteOutput: 'රෙන්ඩර් කළ ෆයිල් එක මකන්න',
+
+  backup: 'උපස්ථය',
+  restore: 'යථා තත්ත්වයට',
+  backupNote: 'ඔබේ පුස්තකාලයේ උපස්ථ ZIP එකක් බාගන්න (වීඩියෝ, මික්ස්, සැකසුම්).',
+  backupDone: 'උපස්ථය සුරැකිණි.',
+  restoreNote: 'උපස්ථ ZIP එකකින් යථා තත්ත්වයට ගෙනෙන්න. නව දේ එකතු වේ — පවතින දේ රඳවා ගනී.',
+  restoreDone: 'යථා තත්ත්වයට ගෙන ආවා: වීඩියෝ {v}, මික්ස් {m}.',
+  restoreFailed: 'මෙය වලංගු උපස්ථ ෆයිල් එකක් නොවේ.',
+  restoreMergesNote: 'වත්මන් පුස්තකාලය සමඟ එකතු වේ',
+
+  language: 'භාෂාව',
+
+  displaySleepWarning: 'මෙම ටැබ් එක විවෘතව තබාගන්න — රෙන්ඩරය වන අතරතුර ලැප්ටොප් තිරය දැල්වෙමින් පවතී. විශාල මික්ස් සඳහා කාලයක් ගත වේ (වීඩියෝවේ දිග මෙන් ~2 ගුණයක්).',
+  renderSizeWarning: 'WhatsApp යවන විට වීඩියෝ සම්පීඩනය කරයි. 720p Fast බෙදාගැනීමට වඩාත් සුදුසුයි.',
+  usePhoneWarning: 'මෙම යෙදුම ලැප්ටොප් හෝ ඩෙස්ක්ටොප් පරිගණකයක හොඳින් ක්‍රියා කරයි.',
+  evictionNudge: 'බ්‍රව්සර් විසින් කාලයත් සමඟ සුරැකි වීඩියෝ ඉවත් කළ හැක. නිතර “උපස්ථය” භාවිතා කරන්න.',
+
+  confirm: 'තහවුරු කරන්න',
+  cancel: 'අවලංගු කරන්න',
+  ok: 'හරි',
+  yes: 'ඔව්',
+  no: 'නැහැ',
+
+  unsupportedFile: 'නොගැළපෙන ෆයිල් වර්ගය',
+  unsupportedFileHint: 'වීඩියෝ සහ ඕඩියෝ ෆයිල් පමණක් එක් කළ හැක.',
+  previewUnavailable: 'වාදන පෙරදසුන',
+};

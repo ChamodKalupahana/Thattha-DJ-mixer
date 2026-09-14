@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# TypeScript incremental build info
+*.tsbuildinfo
+
+# Firebase
+.firebase/
+
+# Kilo local state (plans, sessions, agent manager)
+.kilo/
+
+# Temporary debug/smoke scripts
+*.tmp.cjs
+debug*.cjs
+
+# OS noise
+.DS_Store
+
+# Logs
+*.log
+npm-debug.log*
