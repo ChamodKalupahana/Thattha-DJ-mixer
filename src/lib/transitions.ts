@@ -43,7 +43,9 @@ export function transitionName(type: TransitionSetting['type']): string {
     case 'smooth':
       return 'fade';
     case 'cut':
-      return 'cut';
+      // xfade has no 'cut' transition; render.ts already clamps cut joins to
+      // CUT_DURATION (0.04s), so an instant fade is indistinguishable.
+      return 'fade';
     case 'fadeblack':
       return 'fadeblack';
     case 'slide':

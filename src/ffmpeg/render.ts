@@ -124,22 +124,25 @@ export async function renderMix(opts: RenderOptions): Promise<RenderResult> {
   const isUniform = allVideo && widthsUniform && heightsUniform && fpsUniform;
   const useTwoPass = !isUniform || totalBytes > LARGE_TOTAL || clips.length > MANY_CLIPS;
 
-  const clipStreams = (k: number): StreamRef => {
+  const clipStreams = (k: number, base = 0): StreamRef => {
     const info = infos[k];
     const hasV = info.hasVideo;
     const hasA = info.hasAudio;
     const inputArgs: string[] = [];
-    // Inputs can carry extra option flags (-loop/-framerate for the title card,
-    // -f for anullsrc), so inputArgs.length / 2 is NOT the stream index. Count
-    // actual inputs instead.
-    let inputCount = 0;
-    const vIdx = inputCount++;
+    // Stream indices must be GLOBAL across every input of the current ffmpeg
+    // invocation. Single-pass stitches all clips into one command, so callers
+    // advance `base` by the inputs each clip adds. Two-pass prep runs one clip
+    // per invocation and uses base 0. Each clip always contributes exactly one
+    // -i per branch (title/anullsrc branches carry extra option flags, so
+    // counting raw args would be wrong).
+    let inputIndex = base;
+    const vIdx = inputIndex++;
     if (hasV) {
       inputArgs.push('-i', `in_${k}.dat`);
     } else {
       inputArgs.push('-loop', '1', '-framerate', '30', '-i', `title_${k}.png`);
     }
-    const aIdx = inputCount++;
+    const aIdx = inputIndex++;
     if (hasA) {
       inputArgs.push('-i', `in_${k}.dat`);
     } else {
@@ -264,7 +267,11 @@ export async function renderMix(opts: RenderOptions): Promise<RenderResult> {
       }
     } else {
       const streams: StreamRef[] = [];
-      for (let k = 0; k < n; k++) streams.push(clipStreams(k));
+      let base = 0;
+      for (let k = 0; k < n; k++) {
+        streams.push(clipStreams(k, base));
+        base += streams[streams.length - 1].inputArgs.filter((a) => a === '-i').length;
+      }
       const writeAll = async (f: any) => {
         for (let k = 0; k < n; k++) await writeClipToFs(f, k);
       };
